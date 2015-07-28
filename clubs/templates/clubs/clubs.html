@@ -1,0 +1,18 @@
+{% extends "clubs/base.html" %}
+
+{% block content %}
+<h1>List of Clubs</h1>
+{% for club in clubs %}
+<div class="club-list">
+    <h3>{{ club.name }}</h3>
+    <div class="row">
+        <div class="col-sm-6">
+            <p>{{ club.description }}</p>
+        </div>
+        <div class="col-sm-6">
+            <strong>Meeting time: </strong> {{ club.meeting_day }}s at {{ club.meeting_time }}
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

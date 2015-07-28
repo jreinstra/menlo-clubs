@@ -1,0 +1,17 @@
+body {
+    padding-top: 60px;
+}
+@media (max-width: 979px) {
+    body {
+      padding-top: 60px;
+    }
+}
+
+/* Modifying bootstrap */
+.container {
+    max-width: 1000px !important;
+}
+
+.navbar-right {
+    padding-right: 25px;
+}

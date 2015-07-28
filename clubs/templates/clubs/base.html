@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menlo Clubs</title>
+    <link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="{% static "clubs/main.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "clubs/sticky-footer.css" %}">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header pull-left">
+      <a class="navbar-brand" href="{% url 'clubs:index' %}">Menlo Clubs</a>
+    </div>
+    <div class="navbar-header pull-right">
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a href="#">Example Link</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted text-center">
+            John Reinstra
+        </p>
+    </div>
+</footer>
+</body>
+</html>
