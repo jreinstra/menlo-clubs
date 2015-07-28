@@ -2,12 +2,13 @@
 
 {% block content %}
 <h1>List of Clubs</h1>
-{% for club in clubs %}
+{% for club in object_list %}
 <div class="club-list">
-    <h3>{{ club.name }}</h3>
+    <hr/>
+    <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
     <div class="row">
         <div class="col-sm-6">
-            <p>{{ club.description }}</p>
+            <p>{{ club.short_description }}</p>
         </div>
         <div class="col-sm-6">
             <strong>Meeting time: </strong> {{ club.meeting_day }}s at {{ club.meeting_time }}

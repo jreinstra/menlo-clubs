@@ -1,0 +1,35 @@
+{% extends "clubs/base.html" %}
+
+{% block content %}
+<h1>{{ club.name }}</h1>
+<p class="lead">{{ club.short_description }}</p>
+<p>{{ club.description }}</p>
+<div class="row">
+    <div class="col-sm-6">
+        <h3>General Information</h3><br/>
+        <table class="table">
+            <tr>
+                <td><strong>Meeting Time</strong></td>
+                <td>{{ club.meeting_time_string }}</td>
+            </tr>
+            <tr>
+                <td><strong>Location</strong></td>
+                <td>{{ club.meeting_location }}</td>
+            </tr>
+            <tr>
+                <td><strong>Contact Email</strong></td>
+                <td>
+                    <a href="{{ club.contact_email }}">{{ club.contact_email }}</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <h3>Upcoming Events</h3><br/>
+        <ul>
+            <li>Tennis Tournament</li>
+            <li>Smash Tournament</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
