@@ -1,22 +1,24 @@
 {% extends "clubs/base.html" %}
 
 {% block content %}
-<h1>List of Clubs</h1>
+<h1>Clubs by Day</h1>
 {% for day, clubs in clubs_by_day.iteritems %}
-<h1>{{ day }}</h1>
-{% for club in clubs %}
-<div class="club-list">
-    <hr/>
-    <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
-    <div class="row">
-        <div class="col-sm-6">
-            <p>{{ club.short_description }}</p>
+    {% if clubs %}
+        <h1>{{ day }}</h1>
+        {% for club in clubs %}
+        <div class="club-list">
+            <hr/>
+            <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>{{ club.short_description }}</p>
+                </div>
+                <div class="col-sm-6">
+                    Meeting: {{ club.meeting_time }} in <strong>{{ club.meeting_location }}</strong>
+                </div>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <strong>Meeting time: </strong> {{ club.meeting_day }}s at {{ club.meeting_time }}
-        </div>
-    </div>
-</div>
-{% endfor %}
+        {% endfor %}
+    {% endif %}
 {% endfor %}
 {% endblock %}
