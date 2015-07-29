@@ -2,7 +2,9 @@
 
 {% block content %}
 <h1>List of Clubs</h1>
-{% for club in object_list %}
+{% for day, clubs in clubs_by_day.iteritems %}
+<h1>{{ day }}</h1>
+{% for club in clubs %}
 <div class="club-list">
     <hr/>
     <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
@@ -15,5 +17,6 @@
         </div>
     </div>
 </div>
+{% endfor %}
 {% endfor %}
 {% endblock %}

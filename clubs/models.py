@@ -2,11 +2,28 @@ from django.db import models
 
 # Create your models here.
 class Club(models.Model):
+    MON = "Monday"
+    TUE = "Tuesday"
+    WED = "Wednesday"
+    THU = "Thursday"
+    FRI = "Friday"
+    SAT = "Saturday"
+    SUN = "Sunday"
+    MEETING_DAYS = [
+        (MON, MON),
+        (TUE, TUE),
+        (WED, WED),
+        (THU, THU),
+        (FRI, FRI),
+        (SAT, SAT),
+        (SUN, SUN)
+    ]
+    
     name = models.CharField(max_length=50)
     short_description = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     
-    meeting_day = models.CharField(max_length=9)
+    meeting_day = models.CharField(max_length=9, choices=MEETING_DAYS, default=MON)
     meeting_time = models.TimeField()
     meeting_location = models.CharField(max_length=50)
     
