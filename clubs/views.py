@@ -11,10 +11,15 @@ def index(request):
     return redirect("clubs:club_list")
 
 def club_list(request):
-    days = [x[0] for x in Club.MEETING_DAYS]
-    clubs_by_day = {}
-    for day in days:
-        clubs_by_day[day] = Club.objects.filter(meeting_day=day)
+    days = Club.MEETING_DAYS
+    clubs_by_day = []
+    for day_id, day in days:
+        clubs = list(Club.objects.filter(meeting_day=day_id))
+        if len(clubs) > 0:
+            clubs_by_day.append((day, clubs))
+        else:
+            clubs_by_day.append((day, None))
+    #return HttpResponse(clubs_by_day["Tuesday"])
     return render(request, 'clubs/club_list.html', {'clubs_by_day':clubs_by_day})
     
 class ClubDetail(DetailView):

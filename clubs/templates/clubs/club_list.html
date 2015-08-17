@@ -2,10 +2,10 @@
 
 {% block content %}
 <h1>Clubs by Day</h1>
-{% for day, clubs in clubs_by_day.iteritems %}
-    {% if clubs %}
-        <h1>{{ day }}</h1>
-        {% for club in clubs %}
+{% for clubs in clubs_by_day %}
+    {% if clubs.1 %}
+        <h2>{{ clubs.0 }}</h2>
+        {% for club in clubs.1 %}
         <div class="club-list">
             <hr/>
             <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
