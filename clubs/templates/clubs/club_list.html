@@ -10,10 +10,10 @@
             <hr/>
             <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
             <div class="row">
-                <div class="col-sm-6">
-                    <p>{{ club.short_description }}</p>
+                <div class="col-sm-8">
+                    <p class="lead" style="font-size:18px">{{ club.short_description }}</p>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     Meeting: {{ club.meeting_time }} in <strong>{{ club.meeting_location }}</strong>
                 </div>
             </div>
@@ -21,4 +21,5 @@
         {% endfor %}
     {% endif %}
 {% endfor %}
+<br/><br/><br/>
 {% endblock %}
