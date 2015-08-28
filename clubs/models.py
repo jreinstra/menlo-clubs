@@ -28,7 +28,9 @@ class Club(models.Model):
     meeting_time = models.TimeField()
     meeting_location = models.CharField(max_length=50)
     
-    contact_email = models.CharField(max_length=200)
+    student_leaders = models.CharField(max_length=200, default="")
+    teacher_leaders = models.CharField(max_length=200, default="")
+    contact_email = models.CharField(max_length=200, default="")
     
     def meeting_time_string(self):
         return self.MEETING_DAYS_LIST[self.meeting_day] + "s at " + self.meeting_time.strftime("%H:%M %p").lower()

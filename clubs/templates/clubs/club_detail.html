@@ -17,6 +17,14 @@
                 <td>{{ club.meeting_location }}</td>
             </tr>
             <tr>
+                <td><strong>Student Leader(s)</strong></td>
+                <td>{{ club.student_leaders }}</td>
+            </tr>
+            <tr>
+                <td><strong>Faculty Advisor(s)</strong></td>
+                <td>{{ club.teacher_leaders }}</td>
+            </tr>
+            <tr>
                 <td><strong>Contact Email</strong></td>
                 <td>
                     <a href="mailto:{{ club.contact_email }}">{{ club.contact_email }}</a>
@@ -25,11 +33,12 @@
         </table>
     </div>
     <div class="col-sm-6">
+        <!--
         <h3>Upcoming Events</h3><br/>
         <ul>
             <li>Tennis Tournament</li>
             <li>Smash Tournament</li>
-        </ul>
+        </ul>-->
     </div>
 </div>
 {% endblock %}
