@@ -9,6 +9,7 @@ class Club(models.Model):
     FRI = "Friday"
     SAT = "Saturday"
     SUN = "Sunday"
+    NON = "Non Weekly"
     MEETING_DAYS = (
         (0, MON),
         (1, TUE),
@@ -16,7 +17,8 @@ class Club(models.Model):
         (3, THU),
         (4, FRI),
         (5, SAT),
-        (6, SUN)
+        (6, SUN),
+        (7, NON),
     )
     MEETING_DAYS_LIST = (MON, TUE, WED, THU, FRI, SAT, SUN)
     

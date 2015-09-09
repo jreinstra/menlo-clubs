@@ -1,29 +1,7 @@
 {% extends "clubs/base.html" %}
 
 {% block content %}
-<h1>Version A</h1>
-{% for clubs in clubs_by_day %}
-    {% if clubs.1 %}
-        <h2 class="text-center">{{ clubs.0 }}</h2>
-        {% for club in clubs.1 %}
-        <div class="club-list">
-            <hr/>
-            <a href="{% url 'clubs:club_detail' club.id %}"><h3>{{ club.name }}</h3></a>
-            <div class="row">
-                <div class="col-sm-8">
-                    <p class="lead" style="font-size:18px">{{ club.short_description }}</p>
-                </div>
-                <div class="col-sm-4">
-                    Meeting: {{ club.meeting_time }} in <strong>{{ club.meeting_location }}</strong>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    {% endif %}
-{% endfor %}
-
-<br/><br/><br/>
-<h1>Version B</h1>
+<h1 class="text-center">Clubs By Day</h1>
 <div class="row">
     <div class="col-sm-1"></div>
     {% for clubs in clubs_by_day %}
@@ -42,23 +20,5 @@
     {% endfor %}
     <div class="col-sm-1"></div>
 </div>
-
-<br/><br/><br/>
-<h1>Version C</h1>
-<div class="row">
-    <div class="col-sm-1"></div>
-    {% for clubs in clubs_by_day %}
-        {% if clubs.1 %}
-            <div class="col-sm-2">
-                <h4 class="text-center">{{ clubs.0 }}</h4>
-                {% for club in clubs.1 %}
-                    <hr/>
-                    <a href="{% url 'clubs:club_detail' club.id %}"><h5>{{ club.name }}</h5></a>
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% endfor %}
-    <div class="col-sm-1"></div>
-</div>
-<br/><br/><br/>
+<br/><br/>
 {% endblock %}
