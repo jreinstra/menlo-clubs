@@ -3,7 +3,6 @@
 {% block content %}
 <h1 class="text-center">Clubs By Day</h1>
 <div class="row">
-    <div class="col-sm-1"></div>
     {% for clubs in clubs_by_day %}
         {% if clubs.1 %}
             <div class="col-sm-2">
@@ -18,7 +17,6 @@
             </div>
         {% endif %}
     {% endfor %}
-    <div class="col-sm-1"></div>
 </div>
 <br/><br/>
 {% endblock %}
