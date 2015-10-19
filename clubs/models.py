@@ -35,7 +35,12 @@ class Club(models.Model):
     contact_email = models.CharField(max_length=200, default="")
     
     def meeting_time_string(self):
-        return self.MEETING_DAYS_LIST[self.meeting_day] + "s at " + self.meeting_time.strftime("%H:%M %p").lower()
+        try:
+            result = self.MEETING_DAYS_LIST[self.meeting_day] + "s at "
+        except IndexError:
+            result = ""
+        
+        return result + self.meeting_time.strftime("%H:%M %p").lower()
     
     def __str__(self):
         return self.name
