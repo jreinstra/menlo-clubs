@@ -26,7 +26,7 @@ class Club(models.Model):
     short_description = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     
-    meeting_day = models.IntegerField(choices=MEETING_DAYS, default=(0, MON))
+    meeting_day = models.IntegerField(choices=MEETING_DAYS, default=0)
     meeting_time = models.TimeField()
     meeting_location = models.CharField(max_length=50)
     
