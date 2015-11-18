@@ -9,6 +9,7 @@
                 <h4 class="text-center">{{ clubs.0 }}</h4>
                 {% for club in clubs.1 %}
                     <hr/>
+                    {% include "clubs/meeting_label.html" %}
                     <a href="{% url 'clubs:club_detail' club.id %}"><h5>{{ club.name }}</h5></a>
                     <p class="help-block" style="font-size: 12px;">
                         {{ club.short_description }}

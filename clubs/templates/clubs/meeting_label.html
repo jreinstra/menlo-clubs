@@ -1,0 +1,11 @@
+{% block content %}
+
+{% if club.meets_biweekly %}
+<span class="label label-warning">Meets Biweekly</span><br/>
+{% elif club.meets_monthly %}
+<span class="label label-warning">Meets Monthly</span><br/>
+{% elif club.meets_irregularly %}
+<span class="label label-warning">Meets Irregularly</span><br/>
+{% endif %}
+
+{% endblock %}

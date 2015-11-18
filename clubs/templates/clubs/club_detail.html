@@ -2,7 +2,12 @@
 
 {% block content %}
 <h1>{{ club.name }}</h1>
-<p class="lead">{{ club.short_description }}</p>
+<h4>
+    {% include "clubs/meeting_label.html" %}
+</h4>
+<p class="lead">
+    {{ club.short_description }}
+</p>
 <p>{{ club.description }}</p>
 <div class="row">
     <div class="col-sm-6">

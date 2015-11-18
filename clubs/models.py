@@ -34,6 +34,10 @@ class Club(models.Model):
     teacher_leaders = models.CharField(max_length=200, default="")
     contact_email = models.CharField(max_length=200, default="")
     
+    meets_biweekly = models.BooleanField(default=False)
+    meets_monthly = models.BooleanField(default=False)
+    meets_irregularly = models.BooleanField(default=False)
+    
     def meeting_time_string(self):
         try:
             result = self.MEETING_DAYS_LIST[self.meeting_day] + "s at "
